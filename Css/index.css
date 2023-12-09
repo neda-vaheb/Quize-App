@@ -1,0 +1,41 @@
+:root{
+    --color-primery:#0844e9;
+    --color-background:#e6e6e6;
+
+}
+
+h1{
+font-size: 2.5rem;
+margin-bottom: 50px ;
+color: var(--color-primery);
+
+}
+.container{
+display: flex;
+flex-direction: column;
+padding: 20px;
+width: fit-content;
+
+}
+
+
+a{
+text-decoration: none;
+color:var(--color-primery);
+background-color: white;
+width: 250px;
+color: var(--color-primery);
+display: inline-block;
+padding: 20px 40px;
+font-size: 1.5rem;
+cursor: pointer;
+border-radius: 20px;
+margin: 20px auto;
+border: none;
+text-align: left;
+transition: all 0.4s ease;
+}
+a:hover{
+background-color: var(--color-primery);
+color:white;
+}
