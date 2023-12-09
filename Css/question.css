@@ -104,3 +104,8 @@ margin-bottom: 50px;
     background-color: var(--color-primery);
     color: white;
 }
+#error{
+    display: none;
+    font-size: 2rem;
+    color: var(--color-primery);
+}
