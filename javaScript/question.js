@@ -7,6 +7,7 @@ const questionText =document.getElementById("question-text");
 const answerList = document.querySelectorAll(".answer-text");
 const scores =document.getElementById("score");
 const nextButton = document.getElementById("next-button");
+const finishButton = document.getElementById("finish-button");
 
 const URL = "https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple";
 let formattedData =null;
@@ -51,7 +52,7 @@ answerList.forEach((button,index)=>{
 };
 
 const checkAnswer = (event,index)=>{
-    
+
 if(!isAccept){
     return;
 }
@@ -78,9 +79,7 @@ const nextButtonHandler = ()=>{
     showQuestion();
     removeClass();
     }else{
-        localStorage.setItem("score" , JSON.stringify("score"));
-        window.location.assign("/");
-
+      finishButtonHandler();
     }
 
 };
@@ -89,10 +88,17 @@ const removeClass = ()=>{
 answerList.forEach((button)=>{
     button.className="answer-text";
 })
+};
+
+const finishButtonHandler = ()=>{
+    localStorage.setItem("score" , JSON.stringify("score"));
+    window.location.assign("/");
+
 }
 
 window.addEventListener("load",fectchData);
-nextButton.addEventListener("click",nextButtonHandler)
+nextButton.addEventListener("click",nextButtonHandler);
+finishButton.addEventListener("click",finishButtonHandler);
 answerList.forEach((button,index)=>{
     button.addEventListener("click",(event)=>checkAnswer(event,index))
 })
