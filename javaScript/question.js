@@ -5,16 +5,19 @@ const container =document.getElementById("container");
 const questionNumber =document.querySelector("question-number");
 const questionText =document.getElementById("question-text");
 const answerList = document.querySelectorAll(".answer-text");
+const scores =document.getElementById("score");
 
 const URL = "https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple";
 let formattedData =null;
 let questionIndex = 0;
 let correctAnswer = null;
+let score = 0;
+const CORRECT_BONUS = 10
 
 const fectchData = async ()=>{
 const response = await fetch(URL);
 const json = await response.json();
-console.log(json);
+console.log(json); 
 formattedData = formatData(json.results);
 start();
 }
@@ -35,5 +38,23 @@ answerList.forEach((button,index)=>{
 )
 
 
+};
+const checkAnswer = (event,index)=>{
+
+   const isCorrect = index === correctAnswer ? true : false;
+   if(isCorrect){
+    event.target.classlist.add("correct");
+    score = + CORRECT_BONUS;
+    scores.innerText = score;
+
+
+   }else{
+    event.target.classlist.add("incorrect");
+    answerList[correctAnswer].classList.add("correct");
+   }
+
 }
-fectchData();
+window.addEventListener("load",fectchData);
+answerList.forEach((button,index)=>{
+    button.addEventListener("click",(event)=>checkAnswer(event,index))
+})
