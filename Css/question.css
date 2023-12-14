@@ -109,3 +109,15 @@ margin-bottom: 50px;
     font-size: 2rem;
     color: var(--color-primery);
 }
+.correct {
+    background-color: var(--color-correct);
+}
+.correct:hover {
+    background-color: var(--color-correct);
+}
+.incorrect {
+    background-color: var(--color-incorrect);
+}
+.incorrect:hover {
+    background-color: var(--color-incorrect);
+}
