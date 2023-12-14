@@ -1,0 +1,58 @@
+:root{ 
+    --color-primery:#6757d9;
+    --color-background:#eeedfb;
+ 
+}
+.container{
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#game-score{
+background-color:var(--color-primery);
+color: white;
+width: 80px;
+height: 80px;
+line-height: 80px;
+border-radius: 25px;
+text-align: center;
+font-size: 3rem;
+font-weight: 600;
+margin-bottom: 70px;
+}
+
+#input-user{
+    width: 300px;
+    border: 2px solid white;
+    padding: 15px;
+    background-color: var(--color-background);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+#input-user:focus{
+    outline: none;
+ border-color: var(--color-primery);
+}
+button , a {
+    border: none;
+    width: 300px;
+    text-decoration: none;
+    color:var(--color-primery);
+    background-color:white ;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    transition: all 0.4s ease;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+
+
+}
+button:hover, a:hover{
+    background-color: var(--color-primery);
+    color: white;
+}
